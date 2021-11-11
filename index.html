@@ -9,10 +9,146 @@
 </head>
 <body>
 
-  <div class="text-center px-4">
-    <img src="" alt="logo les petis plats" class="d-block mx-auto mb-4">
+  <div id="header" class="text-center px-4 container-lg">
+    <img src="img/logo_edited-250.png" alt="logo les petis plats" class="d-block mx-auto mb-4 mt-4" width="250">
   </div>
-  
+
+  <!-- moteur de recherche -->
+  <div id="search-engine" class="container-lg">
+    <form class="d-block">
+      <div class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+        </button>
+      </div>
+      <div id="auto-complete" class="d-flex">
+
+      </div>
+      <div class="d-flex mt-3 mb-3 dropdown">
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- articles -->
+  <div id="articles" class="articles container d-flex row mx-auto">
+      <div class="col-md-4">
+          <div class="card shadow-sm">
+              <img src="" class="bd-placeholder-img card-img-top">
+              <div class="d-flex">
+                <h5 class="card-title ">Card title</h5>
+               <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                </svg>
+                10 min
+               </p>
+              </div>
+              <div class="card-body d-flex">
+                <div class="list col-4">
+                  <ul class="list-group">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">A fourth item</li>
+                    <li class="list-group-item">And a fifth one</li>
+                  </ul>
+                </div>  
+                <div class="card-text m-2 col-8">
+                  Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+            <img src="" class="bd-placeholder-img card-img-top">
+            <div class="d-flex">
+              <h5 class="card-title ">Card title</h5>
+             <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+              </svg>
+              10 min
+             </p>
+            </div>
+            <div class="card-body d-flex">
+              <div class="list col-4">
+                <ul class="list-group">
+                  <li class="list-group-item">An item</li>
+                  <li class="list-group-item">A second item</li>
+                  <li class="list-group-item">A third item</li>
+                  <li class="list-group-item">A fourth item</li>
+                  <li class="list-group-item">And a fifth one</li>
+                </ul>
+              </div>  
+              <div class="card-text m-2 col-8">
+                Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+          <img src="" class="bd-placeholder-img card-img-top">
+          <div class="d-flex">
+            <h5 class="card-title ">Card title</h5>
+           <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+              <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+            </svg>
+            10 min
+           </p>
+          </div>
+          <div class="card-body d-flex">
+            <div class="list col-4">
+              <ul class="list-group">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+              </ul>
+            </div>  
+            <div class="card-text m-2 col-8">
+              Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
+            </div>
+          </div>
+      </div>
+  </div>
+      
+
+    
+      
+  </div>
 
   <script src="script/script.js"></script>
 </body>
