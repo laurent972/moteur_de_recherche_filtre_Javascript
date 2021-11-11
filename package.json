@@ -1,0 +1,22 @@
+{
+  "name": "laurentrega_7_10112021.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurent972/laurentrega_7_10112021.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laurent972/laurentrega_7_10112021.io/issues"
+  },
+  "homepage": "https://github.com/laurent972/laurentrega_7_10112021.io#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
