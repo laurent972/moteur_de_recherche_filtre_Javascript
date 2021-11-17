@@ -5,6 +5,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 :root {
   --bs-blue: #005eeb;
   --bs-indigo: #6610f2;
@@ -11117,6 +11118,97 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.list-group--card li {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.card {
+  line-height: 1;
+  border-radius: 0.5rem;
+  background: #E7E7E7;
+  font-size: 0.8rem;
+  flex: 1 1 0;
+}
+.card .time {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.card p {
+  margin-bottom: 0.5rem;
+}
+.card p svg {
+  margin-bottom: 5px;
+}
+.card h5, .card .h5 {
+  font-size: 1.15rem;
+}
+
+.search-engine-form {
+  background: #E7E7E7;
+}
+.search-engine-form .form-control {
+  border: 0;
+  background: #E7E7E7;
+}
+.search-engine-form .form-control::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.bg-gray {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.flex-100 {
+  flex: 0 0 100%;
+}
+
+@media (max-width: 767.98px) {
+  .dropdown {
+    width: 100%;
+  }
+}
+
+.btn {
+  color: rgba(255, 255, 255, 0.85);
+}
+@media (max-width: 767.98px) {
+  .dropdown .btn {
+    width: 100%;
+  }
+}
+.btn:hover {
+  color: #fff;
+}
+.btn-blue {
+  background: #3282F7;
+}
+.btn-blue:hover {
+  background: #2472e6;
+}
+.btn-greenwater {
+  background: #68D9A4;
+}
+.btn-greenwater:hover {
+  background: #59d199;
+}
+.btn-tangerine {
+  background: #ED6454;
+}
+.btn-tangerine:hover {
+  background: #dd5343;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,107 @@
 @import "bootstrap/bootstrap.scss";
+@import "base.scss";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-$primary: red;
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.list-group--card{
+    li{
+        padding: 0;
+        border:0;
+        background: transparent;
+    }
+}
+
+// Card
+.card{
+    line-height: 1;
+    border-radius: 0.5rem;
+    background: $gray;
+    font-size: 0.8rem;
+    flex: 1 1 0;
+    .time{
+        font-size: 1.15rem;
+        font-weight: 700;
+    }
+    p{
+     margin-bottom: 0.5rem;
+     svg{
+         margin-bottom: 5px;
+     }
+    }
+    h5{
+        font-size: 1.15rem;
+    }
+}
+
+//*-- Search Engine *///--
+.search-engine-form{
+    background: $gray;
+    .form-control{
+        border: 0;
+        background: $gray;
+            &::placeholder{
+                color:rgba($black,0.45);
+            }
+    }
+}
+
+.bg-gray{
+    background: rgba($black,0.15);
+}
+
+.flex-100{
+    flex: 0 0 100%
+}
+
+.dropdown{
+    @include media-breakpoint-down(md) { 
+        width: 100%;
+     }
+}
+
+.btn{
+    color:rgba($white,0.85);
+    @include media-breakpoint-down(md) { 
+        .dropdown &{
+            width: 100%;
+        }
+     }
+
+    &:hover{
+        color:$white;
+    }
+    &-blue{
+        background:$blue;
+        &:hover{
+            background: $blue-hover;
+        }
+    }
+
+    &-greenwater{
+       background: $greenwater;
+       &:hover{
+        background: $greenwater-hover; 
+       }
+    }
+
+    &-tangerine{
+        background: $tangerine;
+        &:hover{
+            background: $tangerine-hover; 
+           }
+    }
+}
+
+.dropdown{
+    &:hover{
+        .dropdown-menu{
+            display: block;
+        }
+    }
+}
+
