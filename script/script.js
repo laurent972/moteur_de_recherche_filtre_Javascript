@@ -6,47 +6,35 @@
 
 // if variable saisie === nom ingredient afficher recette ?
 
+const articles = document.querySelector('#articles');
 
-const searchEngine = document.querySelector("#search-engine");
-const autoComplete = document.querySelector('#auto-complete')
-const selectedButtons = document.querySelectorAll('.dropdown-item');
-const selectedIngredient = document.querySelector('.selected-items');
-const ingredient = document.querySelector('.selected-item');
-const listRecettes = document.querySelector('.articles');
-
-
-fetch("script/recipes.js")
-.then((response)=>response.json())
-
-.then((recettes)=>{
-    listRecettes.innerHTML=(
-        recettes.map(data=>(
-            `
-            <div class="col-md-4">
-            <div class="card mb-3">
-            ${data.name}
-            ${data.description}
-           ${data.ingredients}
-             ${data.time}
-            </div>
-            </div>
-            `
-        )).join()
-    )
-});
-
-
-function functionSearch(value){
-
-};
+async function fetchSearch(){
+  await fetch('script/recipes.js')
+  .then(results => results.json())
+  .then(results => recipes = results)
+  return recipes;
+}
 
 
 
-searchEngine.addEventListener('input',(e)=>{
-    autoComplete.innerHTML=`
-    <div class="searchElement shadow px-2 pb-2 mb-2 bg-gray">
-    ${e.target.value}
-    </div>
-    `;
-    console.log(e.target.value);
-});
+async function recipesTraitment(){
+  const recette = await fetchSearch(); 
+  console.log(recette);
+  recipes.forEach(recipe => {
+   // recipesDisplay(recipe); 
+    
+    for (const property in recipe) {
+      console.log(`${property}: ${recipe[property]}`);
+      
+    }
+
+    console.log(Object.entries(recipe));
+    
+  });
+
+
+
+}
+
+recipesTraitment()
+
