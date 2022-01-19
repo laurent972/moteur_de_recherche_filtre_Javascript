@@ -94,10 +94,11 @@ async function recipesTraitment(){
 
      ustensils.innerHTML = (
       recettes
-      .filter(recette => recette.ustensils.toString().toLowerCase().includes(searchTerm.toLocaleLowerCase()))
+      .filter(recette => recette.ustensils.map(ustensil => ustensil.value).toString().toLowerCase().includes(searchTerm.toLocaleLowerCase()))
       .map(recette => 
         `
-        <li clas="list-group-item"><a class="dropdown-item" href="#">  ${recette.ustensils} </a>  </li>  
+        ${recette.ustensils.map(ustencil => '<li clas="list-group-item"><a class="dropdown-item" href="#">'+ ustencil + '</a>  </li> ').join('') }
+        
         `
         )).join('');
  
