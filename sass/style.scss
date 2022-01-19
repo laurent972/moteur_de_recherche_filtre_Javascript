@@ -105,3 +105,11 @@ body{
     }
 }
 
+.list-group--card li{
+  list-style: none;
+  padding-bottom: 6px;
+}
+.card-text:last-child{
+    line-height: 1.15;
+  
+}

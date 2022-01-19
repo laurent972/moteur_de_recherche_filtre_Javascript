@@ -11211,4 +11211,13 @@ body {
   display: block;
 }
 
+.list-group--card li {
+  list-style: none;
+  padding-bottom: 6px;
+}
+
+.card-text:last-child {
+  line-height: 1.15;
+}
+
 /*# sourceMappingURL=style.css.map */
