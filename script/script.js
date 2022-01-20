@@ -7,10 +7,6 @@ const ustensils = document.querySelector('.ustensils .dropdown-menu');
 let recipes = '';  
 let searchTerm = '';
  
-console.log(appareils);
-
-
-
 async function fetchSearch(){
   await fetch('script/recipes.js')
   .then(results => results.json())
@@ -32,9 +28,6 @@ async function fetchSearch(){
 
 async function recipesTraitment(){
   const recettes = await fetchSearch(); 
-  console.log(recettes);
-  console.log(searchTerm);
-
 
   results.innerHTML = (
   recettes
@@ -80,7 +73,7 @@ async function recipesTraitment(){
         ${recette.ingredients.map(ingredient =>'<li clas="list-group-item"><a class="dropdown-item" href="#"> ' + ingredient.ingredient + '</a> </li>' ).join('') } 
          
       `
-      ))
+      )).join('');
 
     appareils.innerHTML = (
       recettes
@@ -92,22 +85,55 @@ async function recipesTraitment(){
         `
      )).join('');
 
+
+
+
+    //  let toto = []
+    
+    //   recettes
+    //   .filter(recette => recette.ustensils.map(ustensil => ustensil.value).toString().toLowerCase().includes(searchTerm.toLocaleLowerCase()))
+    //   .map(recette => {
+    //     toto =  toto.concat(recette.ustensils);
+    //     const filteredArray = toto.filter( (ele,pos)=>toto.indexOf(ele.toLowerCase()) == pos);
+    //     ustensils.innerHTML = (
+    //       `
+    //       ${filteredArray.filter(ustencil => '<li clas="list-group-item"><a class="dropdown-item" href="#">'+ ustencil + '</a>  </li> '.includes(searchTerm.toLocaleLowerCase())) }
+    //       `
+
+    //     )
+    //   }
+
+    //   )
+
+
+
+  
      ustensils.innerHTML = (
       recettes
       .filter(recette => recette.ustensils.map(ustensil => ustensil.value).toString().toLowerCase().includes(searchTerm.toLocaleLowerCase()))
       .map(recette => 
+      
         `
         ${recette.ustensils.map(ustencil => '<li clas="list-group-item"><a class="dropdown-item" href="#">'+ ustencil + '</a>  </li> ').join('') }
         
         `
+      
         )).join('');
- 
+     
 }
-recipesTraitment()
+recipesTraitment();
 
 searchInput.addEventListener('input',(e)=>{
   searchTerm = e.target.value;
   recipesTraitment()
-})
+});
 
 
+function compare(a){
+  var copie = []
+
+    copie.push(a);
+
+  const filteredArray = a.filter( (ele,pos)=>a.indexOf(ele) == pos);
+  console.log(copie);
+}
