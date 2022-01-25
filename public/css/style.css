@@ -11208,7 +11208,11 @@ body {
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0.25em 0.25em;
+  grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . .";
 }
 
 .list-group--card li {
