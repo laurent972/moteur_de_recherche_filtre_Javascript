@@ -97,40 +97,80 @@ body{
     }
 }
 
-.dropdown{
-    &:hover{
-        .dropdown-menu{
+.displayListitems{
+
+      
           display: grid; 
           grid-template-columns: 1fr 1fr 1fr 1fr; 
           grid-template-rows: 1fr 1fr 1fr 1fr; 
           gap: 0.25em 0.25em; 
           grid-template-areas: 
-            ". . . ."
-            ". . . ."
-            ". . . ."
-            ". . . ."; 
-        }
-    }
+            ". . . "
+            ". . . "
+            ". . . "
+            ". . . "; 
+    
 }
+
+
 
 .dropdown-menu{
 
     .dropdown-item::first-letter{
-      //text-transform: uppercase;
+      text-transform: uppercase;
       font-size: 1em;
+      &:focus{
+        background-color:transparent;
+      }
     }
- 
+    
+    .ingredients &{
+        background: #3282F7;
+        top: 53px;
+        border: 0px;
+        .dropdown-item{
+          color: #fff;
+          &:hover{
+            background-color: #2474eb;
+          }
+         
+        }
+    }
+
+    .appareil &{
+      background: #68D9A4;
+      top: 53px;
+      border: 0px;
+      .dropdown-item{
+        color: #fff;
+        &:hover{
+          background-color: #56d197;
+        }
+       
+      }
+  }
+
+  .ustensils &{
+      background: #ED6454;
+      top: 53px;
+      border: 0px;
+      .dropdown-item{
+        color: #fff;
+        &:hover{
+          background-color: #e25242;
+        }
+  }}
 } 
 
+.dropdown-item:focus{
+  background-color:transparent;
+}
 
 .list-group--card li{
   list-style: none;
   padding-bottom: 6px;
 
 }
-.card-text:last-child{
-    line-height: 1.15;
-} 
 
 .form-button{
   &.blue{
@@ -158,6 +198,10 @@ body{
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     position: relative;
+
+    &.clicked{
+      width: 300px;
+    }
 }
 
 .appareil,
@@ -166,11 +210,19 @@ body{
   position: relative;
   .imgDrop{
     position: absolute;
-    left: 142px;
+    right: 15px;
     top: 25px;
+
+    &.ingredient,
+    &.appareil,
+    &.ustensils{
+      &.clicked{
+        transform: rotate(180deg);
+      }
+    }
+   
   }
 }
-
 
 .form-button::placeholder{
     color: rgba($white,0.75);
@@ -181,4 +233,14 @@ body{
     border-color: #80aff5;
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(0 94 235 / 25%);
+}
+
+.selected-items{
+    .btn{
+      padding-right: 25px;
+      background-image: url(/img/exit-blc.png);
+      background-size: 20px;
+      background-position: right center;
+      background-repeat: no-repeat;
+    }
 }

@@ -1,6 +1,4 @@
 
-
-
 functionSearchTerm();
 displayResult();
 
@@ -16,18 +14,18 @@ async function filterRecettes(recipes,ingredients){
     )
 
     if(appareilsTerm.length > 0 ){
-     recettes = recettes.filter(recette => recette.appliance.toLowerCase().includes(appareilsTerm));
+     recettes = recettes.filter(recette => recette.appliance.toLowerCase().includes(appareilsTerm.toString().toLowerCase()));
     }  
 
     if(ustensilsTerm.length > 0 ){
       ustensilsTerm.map(mot=>{
-        recettes = recettes.filter(recette => recette.ustensils.map(ustensil => ustensil.toLowerCase()).includes(mot));
+        recettes = recettes.filter(recette => recette.ustensils.map(ustensil => ustensil.toLowerCase()).includes(mot.toLowerCase()));
       })
     }  
 
     if(ingredientTerm.length > 0 ){
       ingredientTerm.map(mot=>{
-        recettes = recettes.filter(recette => recette.ingredients.map(ingredient => ingredient.ingredient.toLowerCase()).includes(mot));
+        recettes = recettes.filter(recette => recette.ingredients.map(ingredient => ingredient.ingredient.toLowerCase()).includes(mot.toLowerCase()));
       })
     }  
   
@@ -43,8 +41,6 @@ async function functionRemoveIngredients(){
   recipes = await fetchSearch();
   const selectedItems = document.querySelectorAll('.selected-items .btn');
   console.log(selectedItems);
-
-  
 
   console.log(totalItems);
   selectedItems.forEach(selectedIngredient => {

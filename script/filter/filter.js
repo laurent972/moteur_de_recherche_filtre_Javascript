@@ -9,9 +9,10 @@ async function selectIngredient(){
         `
         ingredientTerm.push(ingredient.innerText);
         
-        filterRecettes()
-       //getMotsCles(ingredient.innerText);
-      
+        filterRecettes();
+        ingredientButton.classList.remove('clicked');
+        ingredients.classList.remove('displayListitems');
+        imgDropI.classList.remove('clicked')   
       })   
   });
 }  
@@ -27,7 +28,10 @@ async function selectAppliance(){
         `
         appareilsTerm.push(appliance.innerText);
       
-        filterRecettes()
+        filterRecettes();
+        appareilButton.classList.remove('clicked');
+        appareils.classList.remove('displayListitems');
+        imgDropA.classList.remove('clicked')  
       })   
   });
 }  
@@ -42,6 +46,9 @@ async function selectUstensil(){
         `
         ustensilsTerm.push(ustensil.innerText);
         filterRecettes();
+        ustensilsButton.classList.remove('clicked');
+        ustensils.classList.remove('displayListitems');
+        imgDropU.classList.remove('clicked')  
         
       })   
   });
@@ -50,28 +57,61 @@ async function selectUstensil(){
 
 function functionSearchTerm(){
   searchInput.addEventListener('input',(e)=>{
-      searchTerm = e.target.value.toLowerCase();
-      filterRecettes();
-      displayIngredients(searchTerm);
-      displayAppliances(searchTerm);
-      displayUstensils(searchTerm);
+
+      searchTerm = e.target.value.toLowerCase();  
+        filterRecettes();
+        displayIngredients(searchTerm);
+        displayAppliances(searchTerm);
+        displayUstensils(searchTerm);
+     
       return searchTerm
   });
 }
 
 
-ingredientButton.addEventListener('input', e => {
-    ingredientRequest = e.target.value.toLowerCase();
-    console.log(ingredientsList);
-});
+// ingredientButton.addEventListener('input', e => {
+//     ingredientRequest = e.target.value.toLowerCase();
+//     let results = [];
+    
+//         results = ingredientsList.filter((item) => {
+//             return item.toLowerCase().includes(ingredientRequest)
+//         })
+    
+//     ingredients.innerHTML =  
+//      results.map(item => `<li><a class="dropdown-item" href="#">${item}</a></li>`).join('');
+//      selectIngredient()
 
-appareilButton.addEventListener('keyup', e => {
-  appareilRequest = e.target.value.toLowerCase();
-  console.log(ingredientRequest);
-});
+// });
 
-ustensilsButton.addEventListener('keyup', e => {
-  ustensilRequest = e.target.value.toLowerCase();
-  console.log(ingredientRequest);
-});
 
+// appareilButton.addEventListener('keyup', e => {
+//   appareilRequest = e.target.value.toLowerCase();
+//   console.log(ingredientRequest);
+// });
+
+// ustensilsButton.addEventListener('keyup', e => {
+//   ustensilRequest = e.target.value.toLowerCase();
+//   console.log(ingredientRequest);
+// });
+
+
+
+// ingredientButton.addEventListener('click', e => {
+//   ingredients.classList.toggle('displayListitems');
+//   ingredientButton.classList.toggle('clicked');
+//   imgDropI.classList.toggle('clicked')
+// });
+
+
+// appareilButton.addEventListener('click', e => {
+//   appareils.classList.toggle('displayListitems');
+//   appareilButton.classList.toggle('clicked');
+//   imgDropA.classList.toggle('clicked')
+// });
+
+
+// ustensilsButton.addEventListener('click', e => {
+//   ustensils.classList.toggle('displayListitems');
+//   ustensilsButton.classList.toggle('clicked');
+//   imgDropU.classList.toggle('clicked')
+// });

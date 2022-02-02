@@ -2,7 +2,8 @@ async function displayResult(recettesList){
   if(recettesList === undefined){
     recettesList = await fetchSearch();
   }
-  console.log(recettesList);
+  console.log(recettesList.length);
+
   results.innerHTML = (
     recettesList.map((recette) => 
       `
@@ -37,5 +38,10 @@ async function displayResult(recettesList){
       `
     ).join('')
   )
+       
+  if(recettesList.length === 0){
+    results.innerHTML = `<p class="mt-5 lead text-center">Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson »</p>`;
+    console.log('toto');
+   }
 }
 
