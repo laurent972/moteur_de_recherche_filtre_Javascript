@@ -40,7 +40,7 @@ async function displayResult(recettesList){
   )
        
   if(recettesList.length == 0){
-    results.innerHTML = `<p class="mt-5 lead text-center">Il n'y a pas de résultats pour votre requête</p>`;
+    results.innerHTML = `<p class="mt-5 lead text-center">Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson »</p>`;
     console.log('toto');
    }
 }
