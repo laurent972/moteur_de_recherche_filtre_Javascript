@@ -1,4 +1,6 @@
 
+
+
 functionSearchTerm();
 displayResult();
 
@@ -31,34 +33,41 @@ async function filterRecettes(recipes,ingredients){
   
   displayResult(recettes);
   functionRemoveIngredients();
-  return (recettes,ingredientTerm);
+  totalItems = totalItems.concat(ingredientTerm,ustensilsTerm,appareilsTerm);
+  totalItems = [...new Set(totalItems)];
+  return (recettes,totalItems);
 }
 //filterRecettes()
 
 async function functionRemoveIngredients(){
   recipes = await fetchSearch();
-  const selectedIngredients = document.querySelectorAll('.selected-items .btn-blue');
-  selectedIngredients.forEach(selectedIngredient => {
+  const selectedItems = document.querySelectorAll('.selected-items .btn');
+  console.log(selectedItems);
+
+  
+
+  console.log(totalItems);
+  selectedItems.forEach(selectedIngredient => {
       selectedIngredient.addEventListener('click', e => {
         e.preventDefault();
          removeIngredients.push(selectedIngredient.innerText)
         if(removeIngredients.length >= 1){
           removeIngredients.forEach(mot => {
-              ingredientTerm.map( ingredient => {
+            totalItems.map( ingredient => {
                  if(ingredient != mot){
-                     ingredientTerm = [ingredient];
+                    totalItems = [ingredient];
                  }
               })
           })
-          ingredientTerm.map(mot=>{
-            recettes = recipes.filter(recette => recette.ingredients.map(ingredient => ingredient.ingredient.toLowerCase()).includes(mot));
+          totalItems.map(mot=>{
+            recettes = recipes.filter(recette => recette.ingredients.map(ingredient => ingredient.ingredient.toLowerCase()).includes(mot) || recette.ustensils.map(ustensil => ustensil.toLowerCase()).includes(mot) || recette.appliance.toLowerCase().includes(mot));
           })
           displayResult(recettes);
         }
         removeIngredients.forEach(mot => {
-          ingredientTerm.map( ingredient => {
+          totalItems.map( ingredient => {
              if(ingredient === mot){
-                 ingredientTerm = [];
+                totalItems = [];
                  recettes = recipes;
                  displayResult(recettes);
                  location.reload();

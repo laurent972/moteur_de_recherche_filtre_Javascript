@@ -6,7 +6,7 @@
     searchTerm = ''
   }
   recettes = await fetchSearch();
-  let ingredientsList = []
+ 
     recettes
     .filter(recette => recette.ingredients.map(ingredient => ingredient.ingredient).toString().toLowerCase().includes(searchTerm))
     .map((recette) => {
@@ -28,7 +28,6 @@ displayIngredients();
     searchTerm = ''
   }
   recettes = await fetchSearch();
-  let applianceList = [];
     recettes
     .filter(recette => recette.appliance.toLowerCase().includes(searchTerm))
     .map(recette => {
@@ -49,7 +48,6 @@ displayIngredients();
     searchTerm = ''
   }
   recettes = await fetchSearch();
-  let ustensilList = [];
     recettes
     .filter(recette => recette.ustensils.map(ustensil => ustensil).toString().toLowerCase().includes(searchTerm))
     .map(recette => {
