@@ -10,6 +10,10 @@ const ingredientButton = document.getElementById('search-ingredient')
 const appareilButton = document.querySelector('.appareil .form-button');
 const ustensilsButton = document.querySelector('.ustensils .form-button');
 
+const imgDropI = document.querySelector('.imgDrop.ingredient');
+const imgDropA = document.querySelector('.imgDrop.appareil');
+const imgDropU = document.querySelector('.imgDrop.ustensils');
+
 
 
 let recettes = '';
