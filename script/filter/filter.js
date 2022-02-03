@@ -17,7 +17,6 @@ async function selectIngredient(){
   });
 }  
 
-
 async function selectAppliance(){
   let listOfAppliance = document.querySelectorAll('.appareil ul>li a');
   listOfAppliance.forEach(appliance => {
@@ -53,8 +52,6 @@ async function selectUstensil(){
       })   
   });
 }  
-
-
 
 function functionSearchTerm(){
   searchInput.addEventListener('input',(e)=>{
@@ -94,7 +91,6 @@ ustensilsButton.addEventListener('keyup', e => {
   ustensilRequest = e.target.value.toLowerCase();
   console.log(ingredientRequest);
 });
-
 
 
 ingredientButton.addEventListener('click', e => {

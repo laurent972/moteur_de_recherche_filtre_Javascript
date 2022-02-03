@@ -38,7 +38,6 @@ async function displayResult(recettesList){
       `
     ).join('')
   )
-       
   if(recettesList.length === 0){
     results.innerHTML = `<p class="mt-5 lead text-center text-secondary">Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson »</p><img class="no-result" src="./img/salad.png" width="512"><br>`;
    }
