@@ -55,6 +55,7 @@ async function selectUstensil(){
 }  
 
 
+
 function functionSearchTerm(){
   searchInput.addEventListener('input',(e)=>{
 

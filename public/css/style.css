@@ -11337,4 +11337,9 @@ body {
   background-repeat: no-repeat;
 }
 
+.no-result {
+  width: 90px !important;
+  margin: 0 auto;
+}
+
 /*# sourceMappingURL=style.css.map */
