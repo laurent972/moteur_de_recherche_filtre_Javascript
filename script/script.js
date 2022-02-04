@@ -5,7 +5,6 @@ displayResult();
 async function filterRecettes(){
   recipes = await fetchSearch();
   let recettes =[];
- 
   recipes.filter(recipe =>{
       if(recipe.name.toLowerCase().includes(searchTerm) || recipe.description.toLowerCase().includes(searchTerm) || recipe.ingredients.filter(ingredient => ingredient.ingredient).toString().toLowerCase().includes(searchTerm)){
         recettes.push(recipe);
@@ -34,7 +33,7 @@ async function filterRecettes(){
 
   return (recettes);
 }
-//filterRecettes()
+
 
 async function functionRemoveIngredients(){
   recipes = await fetchSearch();
