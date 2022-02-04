@@ -55,7 +55,6 @@ async function selectUstensil(){
 
 function functionSearchTerm(){
   searchInput.addEventListener('input',(e)=>{
-
       searchTerm = e.target.value.toLowerCase();  
         filterRecettes();
         displayIngredients(searchTerm);
