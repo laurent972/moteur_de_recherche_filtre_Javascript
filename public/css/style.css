@@ -11331,7 +11331,7 @@ body {
 
 .selected-items .btn {
   padding-right: 25px;
-  background-image: url(./img/exit-blc.png);
+  background-image: url(../img/exit-blc.png);
   background-size: 20px;
   background-position: right center;
   background-repeat: no-repeat;
