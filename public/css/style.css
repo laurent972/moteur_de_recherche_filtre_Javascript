@@ -11215,6 +11215,16 @@ body {
   gap: 0.25em 0.25em 0.25em 0.25em;
   grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . .";
 }
+.displayListitems a {
+  line-height: 1.25;
+}
+.displayListitems.top-list-ingredients {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0.25em 0.25em 0.25em;
+  grid-template-areas: ". . . " ". . . " ". . . " ". . . ";
+  width: 36rem;
+}
 
 .dropdown-menu .dropdown-item::first-letter {
   text-transform: uppercase;
@@ -11230,6 +11240,9 @@ body {
 }
 .ingredients .dropdown-menu .dropdown-item {
   color: #fff;
+  overflow: hidden;
+  width: 170px;
+  text-overflow: ellipsis;
 }
 .ingredients .dropdown-menu .dropdown-item:hover {
   background-color: #2474eb;
@@ -11267,7 +11280,7 @@ body {
 }
 
 .form-button {
-  width: 170px;
+  width: 12rem;
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -11294,7 +11307,7 @@ body {
   background: #ED6454;
 }
 .form-button.clicked {
-  width: 300px;
+  width: 36rem;
 }
 
 .appareil,

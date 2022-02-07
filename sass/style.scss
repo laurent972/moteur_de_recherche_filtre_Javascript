@@ -108,9 +108,28 @@ body{
             ". . . ."
             ". . . ."
             ". . . ." ;  
+
+            a{
+              line-height: 1.25;
+            }
+          
+
+     &.top-list-ingredients{
+      grid-template-columns: 1fr 1fr 1fr ; 
+      grid-template-rows: 1fr 1fr 1fr ; 
+      gap: 0.25em 0.25em 0.25em ; 
+      grid-template-areas: 
+        ". . . "
+        ". . . "
+        ". . . "
+        ". . . " ; 
+        width: 36rem;  
+     }       
 }
 
-
+.dropdown-item{
+ 
+}
 
 .dropdown-menu{
 
@@ -128,6 +147,10 @@ body{
         border: 0px;
         .dropdown-item{
           color: #fff;
+          overflow: hidden;
+          width: 170px;
+          text-overflow: ellipsis;
+
           &:hover{
             background-color: #2474eb;
           }
@@ -180,7 +203,7 @@ body{
   &.tangerine{
     background:  #ED6454;
   }
-  width: 170px;
+  width: 12rem;
   display: inline-block;
     font-weight: 400;
     line-height: 1.5;
@@ -198,7 +221,7 @@ body{
     position: relative;
 
     &.clicked{
-      width: 300px;
+      width: 36rem;
     }
 }
 
