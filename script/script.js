@@ -5,13 +5,14 @@ displayResult();
 async function filterRecettes(){
   recipes = await fetchSearch();
   let recettes =[];
+
+  console.log(recettes);
  
   recipes.filter(recipe =>{
       if(recipe.name.toLowerCase().includes(searchTerm) || recipe.description.toLowerCase().includes(searchTerm) || recipe.ingredients.filter(ingredient => ingredient.ingredient).toString().toLowerCase().includes(searchTerm)){
         recettes.push(recipe);
       }
-      }
-    )
+      })
 
     if(appareilsTerm.length > 0 ){
      recettes = recettes.filter(recette => recette.appliance.toLowerCase().includes(appareilsTerm.toString().toLowerCase()));

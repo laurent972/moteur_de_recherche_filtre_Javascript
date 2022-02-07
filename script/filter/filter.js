@@ -55,13 +55,18 @@ async function selectUstensil(){
 
 function functionSearchTerm(){
   searchInput.addEventListener('keyup',(e)=>{
-      searchTerm = e.target.value.toLowerCase();  
+      searchTerm = e.target.value.toLowerCase();
+      
+      if(searchTerm.length > 3){
+     
+        return searchTerm
+      }
         filterRecettes();
         displayIngredients(searchTerm);
         displayAppliances(searchTerm);
         displayUstensils(searchTerm);
      
-      return searchTerm
+      //return searchTerm
   });
 }
 
