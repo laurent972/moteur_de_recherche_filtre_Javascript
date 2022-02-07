@@ -54,7 +54,7 @@ async function selectUstensil(){
 }  
 
 function functionSearchTerm(){
-  searchInput.addEventListener('input',(e)=>{
+  searchInput.addEventListener('keyup',(e)=>{
       searchTerm = e.target.value.toLowerCase();  
         filterRecettes();
         displayIngredients(searchTerm);
@@ -76,19 +76,36 @@ ingredientButton.addEventListener('input', e => {
     
     ingredients.innerHTML =  
      results.map(item => `<li><a class="dropdown-item" href="#">${item}</a></li>`).join('');
-     selectIngredient()
+     selectIngredient();
 
 });
 
 
 appareilButton.addEventListener('keyup', e => {
   appareilRequest = e.target.value.toLowerCase();
-  console.log(ingredientRequest);
+  let results = [];
+    
+  results = applianceList.filter((item) => {
+      return item.toLowerCase().includes(appareilRequest)
+  })
+
+  appareils.innerHTML =  
+  results.map(item => `<li><a class="dropdown-item" href="#">${item}</a></li>`).join('');
+  selectAppliance();
 });
+
 
 ustensilsButton.addEventListener('keyup', e => {
   ustensilRequest = e.target.value.toLowerCase();
-  console.log(ingredientRequest);
+  let results = [];
+    
+  results = ustensilList.filter((item) => {
+      return item.toLowerCase().includes(ustensilRequest)
+  })
+
+  ustensils.innerHTML =  
+  results.map(item => `<li><a class="dropdown-item" href="#">${item}</a></li>`).join('');
+  selectUstensil();
 });
 
 

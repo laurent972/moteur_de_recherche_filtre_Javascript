@@ -99,18 +99,15 @@ body{
 }
 
 .displayListitems{
-
-      
           display: grid; 
           grid-template-columns: 1fr 1fr 1fr 1fr; 
           grid-template-rows: 1fr 1fr 1fr 1fr; 
-          gap: 0.25em 0.25em; 
+          gap: 0.25em 0.25em 0.25em 0.25em; 
           grid-template-areas: 
-            ". . . "
-            ". . . "
-            ". . . "
-            ". . . "; 
-    
+            ". . . ."
+            ". . . ."
+            ". . . ."
+            ". . . ." ;  
 }
 
 
