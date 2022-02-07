@@ -3,7 +3,7 @@ async function displayResult(recettesList){
     recettesList = await fetchSearch();
   }  
 
-  console.log(recettesList);
+ // console.log(recettesList);
  
   results.innerHTML = (
     

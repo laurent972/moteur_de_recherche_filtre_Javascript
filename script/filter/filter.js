@@ -65,8 +65,6 @@ function functionSearchTerm(){
         displayIngredients(searchTerm);
         displayAppliances(searchTerm);
         displayUstensils(searchTerm);
-     
-      //return searchTerm
   });
 }
 

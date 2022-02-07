@@ -5,9 +5,7 @@ displayResult();
 async function filterRecettes(){
   recipes = await fetchSearch();
   let recettes =[];
-
-  console.log(recettes);
- 
+  //console.log(recettes);
   recipes.filter(recipe =>{
       if(recipe.name.toLowerCase().includes(searchTerm) || recipe.description.toLowerCase().includes(searchTerm) || recipe.ingredients.filter(ingredient => ingredient.ingredient).toString().toLowerCase().includes(searchTerm)){
         recettes.push(recipe);
@@ -35,8 +33,9 @@ async function filterRecettes(){
 
   return (recettes);
 }
-//filterRecettes()
 
+
+// Suppression des mots clés
 async function functionRemoveIngredients(){
   recipes = await fetchSearch();
   const selectedIngredients = document.querySelectorAll('.selected-items .btn-blue');
@@ -46,17 +45,17 @@ async function functionRemoveIngredients(){
   selectedIngredients.forEach(ingredient => {
       ingredient.addEventListener('click', e =>{
           e.preventDefault();
-          console.log(ingredient.innerText);
+          //console.log(ingredient.innerText);
           removeIngredients.push(ingredient.innerText);
           
-          console.log(ingredientTerm);
+          //console.log(ingredientTerm);
           ingredientTerm.map( term =>
             removeIngredients.forEach(remove => {
               if(term === remove ){
                   let idTerm = ingredientTerm.indexOf(term);
-                  console.log(ingredientTerm.indexOf(term));
+                  //console.log(ingredientTerm.indexOf(term));
                   ingredientTerm.splice(idTerm,1);
-                  console.log(ingredientTerm);
+                  //console.log(ingredientTerm);
                   filterRecettes()
                   ingredient.remove();
               }
@@ -67,17 +66,12 @@ async function functionRemoveIngredients(){
   selectedAppliances.forEach(appliance => {
         appliance.addEventListener('click', e =>{
             e.preventDefault();
-            console.log(appliance.innerText);
             removeAppliances.push(appliance.innerText);
-            
-            console.log(appareilsTerm);
             appareilsTerm.map( term =>
               removeAppliances.forEach(remove => {
                 if(term === remove ){
                     let idTerm = appareilsTerm.indexOf(term);
-                    console.log(appareilsTerm.indexOf(term));
                     appareilsTerm.splice(idTerm,1);
-                    console.log(appareilsTerm);
                     filterRecettes()
                     appliance.remove();
                 }
@@ -88,22 +82,16 @@ async function functionRemoveIngredients(){
   selectedUstensils.forEach(ustensil => {
         ustensil.addEventListener('click', e =>{
               e.preventDefault();
-              console.log(ustensil.innerText);
               removeUstensils.push(ustensil.innerText);
-              
-              console.log(ustensilsTerm);
               ustensilsTerm.map( term =>
                 removeUstensils.forEach(remove => {
                   if(term === remove ){
                       let idTerm = ustensilsTerm.indexOf(term);
-                      console.log(ustensilsTerm.indexOf(term));
                       ustensilsTerm.splice(idTerm,1);
-                      console.log(ustensilsTerm);
                       filterRecettes()
                       ustensil.remove();
                   }
                 }))
               })
           })    
-
-}
+}//fin de la fonction
