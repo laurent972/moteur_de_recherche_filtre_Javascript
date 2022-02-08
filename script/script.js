@@ -30,7 +30,6 @@ async function filterRecettes(){
   
   displayResult(recettes);
   functionRemoveIngredients();
-
   return (recettes);
 }
 
