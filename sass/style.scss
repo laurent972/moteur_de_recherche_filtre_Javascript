@@ -271,3 +271,15 @@ body{
   width: 90px!important;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 640px) {
+  .form-button.clicked{
+    width: 22rem;
+  }
+
+  .appareil .dropdown-menu,
+  .ustensils .dropdown-menu,
+  .ingredients .dropdown-menu{
+    width: 22rem;
+  }
+}
