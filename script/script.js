@@ -7,17 +7,15 @@ async function filterRecettes(){
   recipes = await fetchSearch();
   let recettes =[];
 
-     for(let i = 0; i< recipes.length; i++){
-     
+     for(let i = 0; i< recipes.length; i++){  
         if(recipes[i].name.toLowerCase().includes(searchTerm) || recipes[i].description.toLowerCase().includes(searchTerm)){
           recettes.push(recipes[i]);
-         
+        
           for(let y = 0; y< recipes.length ; y++){
-          
             for(let z = 0; z<recipes[i].ingredients.length; z++){
-            
               if(recipes[i].ingredients[z].ingredient.toLowerCase()===searchTerm){
-                recettes.push(recipes[i]);
+                recettes.concat(recipes[i]);
+               
               }
             }
            }
