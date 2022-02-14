@@ -8,16 +8,16 @@ async function filterRecettes(){
   let recettes =[];
 
      for(let i = 0; i< recipes.length; i++){
-      console.log('toto');
+     
         if(recipes[i].name.toLowerCase().includes(searchTerm) || recipes[i].description.toLowerCase().includes(searchTerm)){
           recettes.push(recipes[i]);
          
           for(let y = 0; y< recipes.length ; y++){
-            console.log('tata');
+          
             for(let z = 0; z<recipes[i].ingredients.length; z++){
-              console.log('last');
-              if(recipes[i].ingredients[z].ingredient.toLowerCase().includes(searchTerm)){
-                // console.log(recipes[i].ingredients[z].ingredient.toLowerCase(), searchTerm);
+            
+              if(recipes[i].ingredients[z].ingredient.toLowerCase()===searchTerm){
+                recettes.push(recipes[i]);
               }
             }
            }
