@@ -10,11 +10,12 @@ async function filterRecettes(){
      for(let i = 0; i< recipes.length; i++){  
         if(recipes[i].name.toLowerCase().includes(searchTerm) || recipes[i].description.toLowerCase().includes(searchTerm)){
           recettes.push(recipes[i]);
-        
+          console.log('oui');
           for(let y = 0; y< recipes.length ; y++){
             for(let z = 0; z<recipes[i].ingredients.length; z++){
               if(recipes[i].ingredients[z].ingredient.toLowerCase()===searchTerm){
                 recettes.concat(recipes[i]);
+                console.log('oui oui');
                
               }
             }
