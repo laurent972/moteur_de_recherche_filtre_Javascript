@@ -1,10 +1,8 @@
 async function displayResult(recettesList){
   if(recettesList === undefined){
     recettesList = await fetchSearch();
-    
   }  
-  
- // console.log(recettesList);
+ 
  
   results.innerHTML = (
     

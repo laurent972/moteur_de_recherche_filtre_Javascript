@@ -46,7 +46,9 @@ async function functionRemoveIngredients(){
           e.preventDefault();
           //console.log(ingredient.innerText);
           removeIngredients.push(ingredient.innerText);
-          
+          if(ingredientTerm.length <= 0){
+            ingredient.remove();
+          }
           //console.log(ingredientTerm);
           ingredientTerm.map( term =>
             removeIngredients.forEach(remove => {
@@ -63,11 +65,19 @@ async function functionRemoveIngredients(){
       })
 
   selectedAppliances.forEach(appliance => {
+     
         appliance.addEventListener('click', e =>{
             e.preventDefault();
+           
+            if(appareilsTerm.length <= 0){
+              appliance.remove();
+          }
             removeAppliances.push(appliance.innerText);
+          
+            
             appareilsTerm.map( term =>
               removeAppliances.forEach(remove => {
+               
                 if(term === remove ){
                     let idTerm = appareilsTerm.indexOf(term);
                     appareilsTerm.splice(idTerm,1);
