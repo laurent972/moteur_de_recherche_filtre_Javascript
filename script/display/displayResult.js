@@ -1,8 +1,9 @@
 async function displayResult(recettesList){
   if(recettesList === undefined){
     recettesList = await fetchSearch();
+    
   }  
-
+  
  // console.log(recettesList);
  
   results.innerHTML = (
@@ -29,9 +30,10 @@ async function displayResult(recettesList){
         <div class="card-body d-flex justify-content-between mb-5 flex-wrap">
         <div class="list col-md-5">
           <ul class="list-group list-group--card">
-       
-             ${recette.ingredients.map(ingredient =>'<li clas="list-group-item"> <b>' + ingredient.ingredient+'</b> : ' + ingredient.quantity +' '+ ingredient.unit + '</li>' ).join('') } 
-           </ul>
+          
+             ${recette.ingredients.map(ingredient => '<li clas="list-group-item"> <b>' + ingredient.ingredient+'</b> ' + (ingredient.quantity === undefined ? '' : ': '+ ingredient.quantity )+' '+ (ingredient.unit === undefined ? '' : ingredient.unit ) + '</li>' ).join('') } 
+           
+             </ul>
         </div>  
         <div class="card-text col-md-6">
           ${recette.description.substring(0, 300)} ...
