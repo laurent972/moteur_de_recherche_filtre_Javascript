@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +9,17 @@
 </head>
 <body>
 
-  <div id="header" class="text-center px-4 container-lg ">
+  <header id="header" class="text-center px-4 container-lg ">
     <img src="img/logo_edited-250.png" alt="logo les petis plats" class="d-block mx-auto mb-4 mt-4" width="200">
-  </div>
+  </header>
 
   <!-- moteur de recherche -->
   <div  class="container-lg row mx-auto">
     <form class="d-block">
       <div class="d-flex search-engine-form p-1 rounded">
-        <input id="search-engine" class="search form-control me-2 p-3" type="search" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Search" >
-        <button class="btn search" type="submit">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000" class="bi bi-search" viewBox="0 0 16 16">
+        <input id="search-engine" class="search form-control me-2 p-3" type="search" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Search" value="" >
+        <button class="btn search" type="submit" value="search" name="search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000" class="bi bi-search" viewBox="0 0 16 16" alt="search">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg>
         </button>
@@ -28,21 +28,21 @@
       <div class="d-flex flex-wrap mt-3 mb-3"> 
         <div id="selected-items" class="flex-100 selected-items"></div> 
         <div class="dropdown ingredients me-2">
-          <input id="search-ingredient" class="form-button blue dropdown-toggle py-3 mb-2" type="search" placeholder="Ingredients"  data-bs-toggle="dropdown"  aria-label="Search">
+          <input id="search-ingredient" class="form-button blue dropdown-toggle py-3 mb-2" type="search" placeholder="Ingredients"  data-bs-toggle="dropdown"  aria-label="search">
           <img class="imgDrop ingredient" src='img/arrow-down-sign-to-navigate22.png' width=12 alt="dropArrow">
           <ul class="dropdown-menu top-list-ingredients" >
            
           </ul>
         </div>
         <div class="dropdown appareil me-2">
-          <input id="search-appareil" class="form-button green dropdown-toggle py-3 mb-2" type="search" placeholder="Appareils" data-bs-toggle="dropdown">
+          <input id="search-appareil" class="form-button green dropdown-toggle py-3 mb-2" type="search" placeholder="Appareils" data-bs-toggle="dropdown" aria-label="search-appareil">
           <img class="imgDrop appareil" src='img/arrow-down-sign-to-navigate22.png' width=12 alt="dropArrow">
           <ul class="dropdown-menu" >
           
           </ul>
         </div>
         <div class="dropdown ustensils me-2">
-          <input id="search-ustensils" class="form-button tangerine dropdown-toggle py-3 mb-2" type="search" placeholder="Ustensils"  data-bs-toggle="dropdown">
+          <input id="search-ustensils" class="form-button tangerine dropdown-toggle py-3 mb-2" type="search" placeholder="Ustensils"  data-bs-toggle="dropdown" aria-label="search-ustensils">
           <img class="imgDrop ustensils" src='img/arrow-down-sign-to-navigate22.png' width=12 alt="dropArrow">
           <ul class="dropdown-menu" >
     
@@ -53,13 +53,9 @@
   </div>
 
   <!-- articles -->
-  <div id="articles" class="articles container-lg d-flex row mx-auto">
-   
-      
-
-    
-      
-  </div>
+  <main id="articles" class="articles container-lg d-flex row mx-auto">
+     
+  </main>
   <script src="script/variables/variables.js"></script>
   <script src="script/fetch.js"></script>
   <script src="script/display/displayResult.js"></script>
